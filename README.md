@@ -1,5 +1,13 @@
 # [유통/CV/DL] 실내(편의점, 무인점포) 절도행위 탐지 모델 개발
 
+## 목차
+
+### 📖 Introduction
+### 📎 데이터 소개와 전처리
+### 🤖 모델링
+### 🪄 기대 효과
+### +) 추후 개선 방향
+
 ## 📖 Introduction
 
 - 문제인식: 편의점, 무인점포 내 범죄행위가 해를 거듭할수록 증가.
@@ -64,7 +72,7 @@
 
 ![](https://velog.velcdn.com/images/hsty94/post/f4f613c1-b494-414c-bf0f-16457dead620/image.png)
 
-- 1단계: MediaPipe의 패턴에서 바로 이상탐지를 한 경우와 YOLOv5로 객체탐지 후 패턴의 이상탐지를 한 경우의 결과 비교.
+#### 1단계: MediaPipe의 패턴에서 바로 이상탐지를 한 경우와 YOLOv5로 객체탐지 후 패턴의 이상탐지를 한 경우의 결과 비교.
   
 ![](https://velog.velcdn.com/images/hsty94/post/8b5113eb-66f9-432a-aa89-43f80a327c3b/image.png)
 
@@ -74,14 +82,14 @@
 ➡️ 그러나 무인점포가 아닌 편의점 상황에서 YOLO로 객체탐지를 하는 경우, 오히려 다중 객체를 탐지함으로써 모델 학습이 제대로 되지 않는 경우가 발생했음. 하여 최종적으로 YOLO 객체탐지는 무인점포 상황에서만 활용하기로 결정.
 
 
-- 2단계: 추출한 Clip만으로 시퀀스별 학습을 했을 경우와 Clip을 병합하여 시퀀스 묶음별 학습을 했을 경우의 결과 비교.
+#### 2단계: 추출한 Clip만으로 시퀀스별 학습을 했을 경우와 Clip을 병합하여 시퀀스 묶음별 학습을 했을 경우의 결과 비교.
 
 ![](https://velog.velcdn.com/images/hsty94/post/f42f20bc-013d-4caf-99d8-3291492f386c/image.png)
 
 ➡️ 시퀀스별 학습을 했을 경우 탐지의 정확성이 더 좋음. 시퀀스 묶음별 학습을 했을 경우 오히려 오탐지를 하는 경우 발생. 최종적으로 시퀀스별 학습을 하기로 결정.
 
 
-- 3단계: MediaPipe로 Landmark를 몸만 했을 경우와, 얼굴+몸을 했을 경우 결과 비교.
+#### 3단계: MediaPipe로 Landmark를 몸만 했을 경우와, 얼굴+몸을 했을 경우 결과 비교.
 
 ![](https://velog.velcdn.com/images/hsty94/post/0c6767d7-7dec-4576-b1ad-dd4582cdfe80/image.png)
 
