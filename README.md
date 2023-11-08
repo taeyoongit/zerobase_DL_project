@@ -5,6 +5,7 @@
 목표: 실내(편의점, 무인점포) 절도행위 탐지 모델을 개발하여 범죄 예방에 기여.
 
 
+
 ### 📎 데이터 소개와 전처리
 
 - AI-Hub의 [실내(편의점, 매장) 사람 이상행동 데이터](https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=&topMenu=&aihubDataSe=data&dataSetSn=71550)에서 절도행위만 선별하여 사용.
@@ -14,17 +15,21 @@
 1. Clip 추출
 ![](https://velog.velcdn.com/images/hsty94/post/76ee081a-f73f-4cbd-aaf3-bbea3675537e/image.png)
 ➡️ 1분(180fps)의 영상에서 정상행동과 이상행동을 50:50 비율로 10초(30fps) Clip 추출.
+
 ➡️ 각 Clip은 시퀀스별 학습에 사용.
 
-2. Clip 병합
+3. Clip 병합
 ![](https://velog.velcdn.com/images/hsty94/post/521fa43a-bf94-4674-9c0b-fdd6fc378436/image.png)
 ➡️ 추출한 각 클립을 병합하여 정상행동, 이상행동만 반복해서 나타나는 병합 Clip을 생성.
+
 ➡️ 시퀀스 묶음별 학습에 사용.
 
-3. MediaPipe
+5. MediaPipe
 ![](https://velog.velcdn.com/images/hsty94/post/a2e85136-bae0-4451-acc7-36b6b83a3951/image.png)
 ➡️ Google의 MediaPipe 활용하여 얼굴과 몸에 해당하는 Landmark의 x, y 좌표를 추출.
+
 ➡️ Landmark의 행동 패턴을 모델에 학습.
+
 
 
 ### 🤖 모델링
@@ -36,9 +41,10 @@
 2. 모델 선정 - LSTM
 ![](https://velog.velcdn.com/images/hsty94/post/62270540-e439-440f-9666-1962bed1531d/image.png)
 ➡️ Simple RNN에서 Cell state를 추가하여 Time step을 가로지르며 셀 상태가 보존됨. 기존의 장기 의존성(Long term depency)를 효과적으로 해결.
+
 ➡️ __시간 흐름에 따른 행동 패턴을 학습__하기에 적절한 모델로 생각하여 __LSTM 모델__을 최종 선정하였음.
 
-3. 단계별 비교 분석
+4. 단계별 비교 분석
 
 ![](https://velog.velcdn.com/images/hsty94/post/f4f613c1-b494-414c-bf0f-16457dead620/image.png)
 
@@ -63,6 +69,8 @@
 
 ![](https://velog.velcdn.com/images/hsty94/post/94daefae-241f-49ac-a738-be3ad8cf033e/image.png)
 
+
+
 ### 🪄 기대 효과
 
 - __탐지 자동화로 보안 강화__ : 편의점, 무인점포의 CCTV를 통해 범죄행위를 자동 탐지함으로써 보안을 강화할 수 있음.
@@ -74,6 +82,8 @@
 - __매장 이용에 대한 서비스 품질 향상__ : 사용자는 보안 시스템 자체보다 매장 운영에 집중함으로써 결과적으로 서비스 품질 향상을 야기할 수 있음.
 
 - __학습량 누적에 따라 탐지 성능 향상__ : 딥러닝 모델이 시스템 내에서 다양한 상황과 행동 패턴을 학습할 수 있기 때문에 사용량이 늘어날수록 이상탐지 성능의 향상됨.
+
+
 
 ### +) 추후 개선 방향
 
