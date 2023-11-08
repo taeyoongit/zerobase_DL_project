@@ -20,12 +20,11 @@
 
 ## 📎 데이터 소개와 전처리
 
-- AI-Hub의 [실내(편의점, 매장) 사람 이상행동 데이터](https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=&topMenu=&aihubDataSe=data&dataSetSn=71550)에서 절도행위만 선별하여 사용.
+### AI-Hub의 [실내(편의점, 매장) 사람 이상행동 데이터](https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=&topMenu=&aihubDataSe=data&dataSetSn=71550)에서 절도행위만 선별하여 사용.
 
-- 전처리 과정
+### 전처리 과정
 
-
-### 1. Clip 추출
+#### 1. Clip 추출
    
 ![](https://velog.velcdn.com/images/hsty94/post/76ee081a-f73f-4cbd-aaf3-bbea3675537e/image.png)
 
@@ -34,7 +33,7 @@
 ➡️ 각 Clip은 시퀀스별 학습에 사용.
 
 
-### 2. Clip 병합
+#### 2. Clip 병합
 
 ![](https://velog.velcdn.com/images/hsty94/post/521fa43a-bf94-4674-9c0b-fdd6fc378436/image.png)
 
@@ -43,7 +42,7 @@
 ➡️ 시퀀스 묶음별 학습에 사용.
 
 
-### 3. MediaPipe
+#### 3. MediaPipe
 
 ![](https://velog.velcdn.com/images/hsty94/post/a2e85136-bae0-4451-acc7-36b6b83a3951/image.png)
 
