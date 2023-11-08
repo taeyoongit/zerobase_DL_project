@@ -10,6 +10,8 @@
 
 ## 📖 Introduction
 
+![](https://velog.velcdn.com/images/hsty94/post/c3133d07-b28d-4ef8-9ab3-d4e954941f39/image.png)
+
 - 문제인식: 편의점, 무인점포 내 범죄행위가 해를 거듭할수록 증가.
 
 - 목표: 실내(편의점, 무인점포) 절도행위 탐지 모델을 개발하여 범죄 예방에 기여.
