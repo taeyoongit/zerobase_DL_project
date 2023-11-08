@@ -10,7 +10,7 @@
 
 ## 📖 Introduction
 
-![](https://velog.velcdn.com/images/hsty94/post/c3133d07-b28d-4ef8-9ab3-d4e954941f39/image.png)
+![image](https://github.com/taeyoongit/zerobase_DL_project/assets/135580777/7eb7a878-368f-4c36-a33d-d2b946ef5853)
 
 - 문제인식: 편의점, 무인점포 내 범죄행위가 해를 거듭할수록 증가.
 
