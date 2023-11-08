@@ -77,9 +77,12 @@
   
 ![](https://velog.velcdn.com/images/hsty94/post/8b5113eb-66f9-432a-aa89-43f80a327c3b/image.png)
 
+
 🤔 문제점: YOLO를 미적용했을 때 MediaPipe가 사람이 아닌 사물을 잘못 인지하는 경우가 발생
 
+
 💡 해결: YOLO로 객체탐지를 우선적으로 하고 그 범위 내에서 MediaPipe가 Landmark 형성
+
 
 ➡️ 그러나 무인점포가 아닌 편의점 상황에서 YOLO로 객체탐지를 하는 경우, 오히려 다중 객체를 탐지함으로써 모델 학습이 제대로 되지 않는 경우가 발생했음. 하여 최종적으로 YOLO 객체탐지는 무인점포 상황에서만 활용하기로 결정.
 
